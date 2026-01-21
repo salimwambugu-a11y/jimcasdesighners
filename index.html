@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jimcas Designers</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', sans-serif; 
+      text-align: center; 
+      background: #f9f9f9; 
+      color: #2c3e50; 
+      padding: 20px; 
+    }
+    header {
+      background: #1a2530;
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 { font-size: 2.2em; margin: 0; }
+    p.tagline { font-style: italic; font-size: 1.1em; color: #3498db; }
+    .contact { margin: 15px 0; font-size: 1em; }
+    .whatsapp {
+      background: #25D366; 
+      color: white !important; 
+      padding: 10px 20px; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      display: inline-block; 
+      margin: 10px 0; 
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .whatsapp:hover { background: #128C7E; }
+    .services { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 18px; 
+      margin: 30px auto; 
+    }
+    .service { 
+      background: #2980b9; 
+      color: white; 
+      padding: 18px; 
+      width: 200px; 
+      border-radius: 10px; 
+      cursor: pointer; 
+      transition: transform 0.2s, background 0.3s;
+    }
+    .service:hover { 
+      background: #e67e22; 
+      transform: translateY(-5px); 
+    }
+    .gallery, .testimonials {
+      max-width: 900px; 
+      margin: 40px auto; 
+      padding: 20px;
+    }
+    .gallery img {
+      width: 30%; 
+      border-radius: 10px; 
+      margin: 10px 1.5%; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .testimonial {
+      background: white; 
+      padding: 15px; 
+      margin: 20px auto; 
+      max-width: 600px; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-style: italic;
+    }
+    form { 
+      max-width: 500px; 
+      margin: 40px auto; 
+      padding: 25px; 
+      background: white; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input, textarea, button { 
+      width: 100%; 
+      padding: 12px; 
+      margin: 10px 0; 
+      border: 1px solid #ddd; 
+      border-radius: 6px; 
+    }
+    button { 
+      background: #e74c3c; 
+      color: white; 
+      font-weight: bold; 
+      font-size: 1.1em; 
+      cursor: pointer; 
+    }
+    button:hover { background: #c0392b; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jimcas Designers</h1>
+    <p class="tagline">"Make your madane place a masterpiece"</p>
+    <p class="contact"> 0706032932 |  stanleykinyori@gmail.com</p>
+    <a href="https://wa.me/254706032932" target="_blank" class="whatsapp">Chat on WhatsApp</a>
+  </header>
+
+  <div class="services">
+    <div class="service" onclick="selectService('Electrical Installation')">Electrical Installation</div>
+    <div class="service" onclick="selectService('Electrical Maintenance')">Electrical Maintenance</div>
+    <div class="service" onclick="selectService('Interior Design')">Interior Design</div>
+    <div class="service" onclick="selectService('Plumbing')">Plumbing</div>
+    <div class="service" onclick="selectService('WiFi & CCTV Installation')">WiFi & CCTV</div>
+    <div class="service" onclick="selectService('Gypsum Designers')">Gypsum Designers</div>
+  </div>
+
+  <div class="gallery">
+    <h2>Our Work</h2>
+    <p>Before your eyes go live — here are examples of our craftsmanship.</p>
+    <img src="https://via.placeholder.com/300x200/2980b9/FFFFFF?text=Modern+Ceiling" alt="Gypsum Design">
+    <img src="https://via.placeholder.com/300x200/e67e22/FFFFFF?text=WiFi+Setup" alt="WiFi Installation">
+    <img src="https://via.placeholder.com/300x200/27ae60/FFFFFF?text=Elegant+Plumbing" alt="Plumbing Work">
+  </div>
+
+  <div class="testimonials">
+    <h2>What Clients Say</h2>
+    <div class="testimonial">
+      "Jimcas transformed my living room with a stunning gypsum ceiling. Professional, fast, and clean!" — Jane M.
+    </div>
+    <div class="testimonial">
+      "Fixed my CCTV and WiFi in one visit. Stanley knows his stuff!" — David K.
+    </div>
+    <div class="testimonial">
+      "From design to finish, everything was perfect. Highly recommend!" — Amina W.
+    </div>
+  </div>
+
+  <form id="requestForm" style="display:none;">
+    <h2>Service Request</h2>
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <input type="text" id="selectedService" readonly placeholder="Service" />
+    <textarea id="details" placeholder="Tell me about your job..."></textarea>
+    <button type="submit">Send Request</button>
+  </form>
+
+  <script>
+    function selectService(service) {
+      document.getElementById('selectedService').value = service;
+      document.getElementById('requestForm').style.display = 'block';
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    document.getElementById('requestForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const service = document.getElementById('selectedService').value;
+      const details = document.getElementById('details').value;
+      alert(`Thank you, ${name}! We'll contact you at ${email} to discuss your ${service} request.`);
+    });
+  </script>
+</body>
+</html>
