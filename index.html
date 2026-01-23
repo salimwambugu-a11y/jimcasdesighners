@@ -190,7 +190,13 @@
     <h2>Service Request</h2>
     <input type="text" id="name" placeholder="Your Name" required />
     <input type="email" id="email" placeholder="Your Email" required />
-    <input type="text" id="selectedService" readonly placeholder="Service" />
+    <select name="subject" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
+  <option value="">I need help with...</option>
+  <option value="Gypsum Ceiling">Gypsum Ceiling</option>
+  <option value="Electrical Work">Electrical Work</option>
+  <option value="Interior Design">Interior Design</option>
+</select>
+ placeholder="Service" />
     <textarea id="details" placeholder="Tell me about your job..."></textarea>
     <button type="submit">Send Request</button>
   </form>
