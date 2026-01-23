@@ -2,245 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jimcas Designers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JimCas Designers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { 
-      font-family: 'Segoe UI', sans-serif; 
-      text-align: center; 
-      background: #f9f9f9; 
-      color: #2c3e50; 
-      padding: 20px; 
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f4f4;
+      color: #333;
     }
     header {
-      background: #1a2530;
-      color: white;
-      padding: 30px;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    h1 { font-size: 2.2em; margin: 0; }
-    p.tagline { font-style: italic; font-size: 1.1em; color: #3498db; }
-    .contact { margin: 15px 0; font-size: 1em; }
-    .whatsapp {
-      background: #25D366; 
-      color: white !important; 
-      padding: 10px 20px; 
-      border-radius: 8px; 
-      text-decoration: none; 
-      font-weight: bold; 
-      display: inline-block; 
-      margin: 10px 0; 
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    .whatsapp:hover { background: #128C7E; }
-    .services { 
-      display: flex; 
-      flex-wrap: wrap; 
-      justify-content: center; 
-      gap: 18px; 
-      margin: 30px auto; 
-    }
-    .service { 
-      background: #2980b9; 
-      color: white; 
-      padding: 18px; 
-      width: 200px; 
-      border-radius: 10px; 
-      cursor: pointer; 
-      transition: transform 0.2s, background 0.3s;
-    }
-    .service:hover { 
-      background: #e67e22; 
-      transform: translateY(-5px); 
-    }
-    .gallery, .testimonials {
-      max-width: 900px; 
-      margin: 40px auto; 
+      background: #000;
+      color: #fff;
       padding: 20px;
+      text-align: center;
     }
-    .gallery img {
-      width: 30%; 
-      border-radius: 10px; 
-      margin: 10px 1.5%; 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: 0.3s;
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+    .video-section {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    .testimonial {
-      background: white; 
-      padding: 15px; 
-      margin: 20px auto; 
-      max-width: 600px; 
-      border-radius: 10px; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      font-style: italic;
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-    form { 
-      max-width: 500px; 
-      margin: 40px auto; 
-      padding: 25px; 
-      background: white; 
-      border-radius: 12px; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
     }
-    input, textarea, button { 
-      width: 100%; 
-      padding: 12px; 
-      margin: 10px 0; 
-      border: 1px solid #ddd; 
-      border-radius: 6px; 
+    .content {
+      z-index: 1;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    button { 
-      background: #e74c3c; 
-      color: white; 
-      font-weight: bold; 
-      font-size: 1.1em; 
-      cursor: pointer; 
+    .content h2 {
+      font-size: 42px;
+      margin: 0 0 20px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
-    button:hover { background: #c0392b; }
+    .content p {
+      font-size: 18px;
+      margin: 0 0 30px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+    .btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 14px 30px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Jimcas Designers</h1>
-    <p class="tagline">"Make your madane place a masterpiece"</p>
-    <p class="contact"> 0706032932 |  stanleykinyori@gmail.com</p>
-    <a href="https://wa.me/254706032932" target="_blank" class="whatsapp">Chat on WhatsApp</a>
+    <h1>JimCas Designers</h1>
   </header>
 
-  <div class="services">
-    <div class="service" onclick="selectService('Electrical Installation')">Electrical Installation</div>
-    <div class="service" onclick="selectService('Electrical Maintenance')">Electrical Maintenance</div>
-    <div class="service" onclick="selectService('Interior Design')">Interior Design</div>
-    <div class="service" onclick="selectService('Plumbing')">Plumbing</div>
-    <div class="service" onclick="selectService('WiFi & CCTV Installation')">WiFi & CCTV</div>
-    <div class="service" onclick="selectService('Gypsum Designers')">Gypsum Designers</div>
-  </div>
-<div class="services">
-  <h2>Our Services</h2>
-  <p>Electrical Installation • Gypsum Interior Design • Full Home & Office Fit-Outs</p>
-</div>
+  <!-- Video Hero Section -->
+  <section class="video-section">
+    <video class="video-bg" autoplay muted loop>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Quality Interiors. Clean Electrical. Strong Gypsum.</h2>
+      <p>Based in Nairobi — building trust, one project at a time.</p>
+      <a href="#work" class="btn">See Our Work</a>
+    </div>
+  </section>
 
-<div class="story">
-  <h2>Why Jimcas?</h2>
-  <p>We don’t just do good work — we do <strong>perfect work</strong>.<br>
-     Every wire, every board, every detail — placed with pride.<br>
-     Because when we leave, your space isn’t just finished…<br>
-     <strong>It’s a masterpiece.</strong></p>
-</div>
+  <!-- Our Work Gallery -->
+  <section id="work" style="padding: 60px 20px; background: #f8f8f8; text-align: center;">
+    <h2 style="font-family: 'Montserrat', sans-serif; color: #333;">Our Work</h2>
+    <div style="display: flex; overflow-x: auto; gap: 15px; padding: 20px 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+      <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
+        <img src="ceiling.jpg" width="300" alt="Gypsum Ceiling" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Gypsum Ceiling – Westlands</div>
+      </div>
+      <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
+        <img src="electrical.jpg" width="300" alt="Electrical Work" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Electrical Panel – Kilimani</div>
+      </div>
+      <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
+        <img src="interior.jpg" width="300" alt="Interior Design" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Interior Work – Kileleshwa</div>
+      </div>
+    </div>
+  </section>
 
-<div class="contact">
-  <h2>Ready to Transform Your Space?</h2>
-  <p>Call Stanley: <strong>0706 032 932</strong></p>
-  <p>Nairobi • Fast Response • Free Quotes • Quality Guaranteed</p>
-</div>
-  
-  <div class="gallery">
-    <h2>Our Work</h2>
-    <p>Before your eyes go live — here are examples of our craftsmanship.</p>
- </section>
+  <!-- Contact Form -->
+  <section style="padding: 60px 20px; background: #fff; text-align: center;">
+    <h2 style="font-family: 'Montserrat', sans-serif; color: #333;">Get In Touch</h2>
+    <p style="color: #555; max-width: 600px; margin: 20px auto;">Need a quote or have a project in mind? Send me a message.</p>
+    <form action="https://api.web3forms.com/submit" method="POST" style="max-width: 500px; margin: 30px auto; padding: 20px; background: #f8f8f8; border-radius: 10px;">
+      <input type="hidden" name="access_key" value="f35483a0-5b1a-4c7d-9e17-7c334413a085">
+      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
+      <input type="email" name="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
+      <select name="subject" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
+        <option value="">I need help with...</option>
+        <option value="Gypsum Ceiling">Gypsum Ceiling</option>
+        <option value="Electrical Work">Electrical Work</option>
+        <option value="Interior Design">Interior Design</option>
+      </select>
+      <textarea name="message" placeholder="Tell me about your project..." required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; height: 120px;"></textarea>
+      <button type="submit" style="background: #000; color: #fff; padding: 12px 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px;">Send Message</button>
+    </form>
+  </section>
 
-<section style="padding: 60px 20px; background: #f8f8f8; text-align: center;">
-  <h2 style="font-family: 'Montserrat', sans-serif; color: #333;">Our Work</h2>
-  <div style="display: flex; overflow-x: auto; gap: 15px; padding: 20px 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
-    <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
-      <img src="ceiling.jpg" width="300" alt="Gypsum Ceiling" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-      <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Gypsum Ceiling – Westlands</div>
-    </div>
-    <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
-      <img src="electrical.jpg" width="300" alt="Electrical Work" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-      <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Electrical Panel – Kilimani</div>
-    </div>
-    <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
-      <img src="interior.jpg" width="300" alt="Interior Design" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-      <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Interior Work – Kileleshwa</div>
-    </div>
-  </div>
-<section style="padding: 60px 20px; background: #fff; text-align: center;">
-  <h2 style="font-family: 'Montserrat', sans-serif; color: #333;">Get In Touch</h2>
-  <p style="color: #555; max-width: 600px; margin: 20px auto;">Need a quote or have a project in mind? Send me a message.</p>
-  <form action="https://api.web3forms.com/submit" method="POST" style="max-width: 500px; margin: 30px auto; padding: 20px; background: #f8f8f8; border-radius: 10px;">
-    <input type="hidden" name="access_key" value="f35483a0-5b1a-4c7d-9e17-7c334413a085">
-    <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
-    <input type="email" name="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
-    <textarea name="message" placeholder="Tell me about your project..." required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; height: 120px;"></textarea>
-    <button type="submit" style="background: #000; color: #fff; padding: 12px 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px;">Send Message</button>
-  </form>
-</section>
-</section>
-  </div>
-
-  <div class="testimonials">
-    <h2>What Clients Say</h2>
-    <div class="testimonial">
-      "Jimcas transformed my living room with a stunning gypsum ceiling. Professional, fast, and clean!" — Jane M.
-    </div>
-    <div class="testimonial">
-      "Fixed my CCTV and WiFi in one visit. Stanley knows his stuff!" — David K.
-    </div>
-    <div class="testimonial">
-      "From design to finish, everything was perfect. Highly recommend!" — Amina W.
-    </div>
-  </div>
-
- <section style="padding: 60px 20px; background: #fff; text-align: center;">
-  <h2 style="font-family: 'Montserrat', sans-serif; color: #333;">Get In Touch</h2>
-  <p style="color: #555; max-width: 600px; margin: 20px auto;">Need a quote or have a project in mind? Send me a message.</p>
-  <form action="https://api.web3forms.com/submit" method="POST" style="max-width: 500px; margin: 30px auto; padding: 20px; background: #f8f8f8; border-radius: 10px;">
-    <input type="hidden" name="access_key" value="f35483a0-5b1a-4c7d-9e17-7c334413a085">
-    <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
-    <input type="email" name="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
-    <select name="subject" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;">
-      <option value="">I need help with...</option>
-      <option value="Gypsum Ceiling">Gypsum Ceiling</option>
-      <option value="Electrical Work">Electrical Work</option>
-      <option value="Interior Design">Interior Design</option>
-    </select>
-    <textarea name="message" placeholder="Tell me about your project..." required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; height: 120px;"></textarea>
-    <button type="submit" style="background: #000; color: #fff; padding: 12px 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px;">Send Message</button>
-  </form>
-</section>
-<section style="height: 100vh; width: 100%; position: relative; overflow: hidden;">
-  <iframe 
-    src="https://www.youtube.com/embed/5ynqdbrEf4s?autoplay=1&loop=1&playlist=5ynqdbrEf4s&mute=1&controls=0&modestbranding=1&showinfo=0&disablekb=1&start=0" 
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; pointer-events: none;" 
-    allow="autoplay; loop; encrypted-media" 
-    allowfullscreen>
-  </iframe>
-    </div>
-    <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
-      <img src="electrical.jpg" width="300" alt="Electrical Work" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-      <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Electrical Panel – Kilimani</div>
-    </div>
-    <div style="flex: 0 0 auto; scroll-snap-align: start; width: 300px;">
-      <img src="interior.jpg" width="300" alt="Interior Design" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-      <div style="text-align: center; margin-top: 8px; color: #555; font-size: 14px;">Interior Work – Kileleshwa</div>
-    </div>
-  </div>
-</section>
-  <div style="position: relative; z-index: 2; color: white; text-align: center; padding: 15% 5%; background: rgba(0,0,0,0.3); height: 100%;">
-    <h1 style="font-size: 3em; text-shadow: 2px 2px 8px #000; font-family: 'Montserrat', sans-serif;">Jimcas Designers</h1>
-    <p style="font-size: 1.5em; text-shadow: 1px 1px 5px #000;">Do perfect work. Leave a masterpiece.</p>
-    <p><a href="#contact" style="color: #fff; border: 2px solid #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Call Stanley: 0706 032 932</a></p>
-  </div>
-  <script>
-    function selectService(service) {
-      document.getElementById('selectedService').value = service;
-      document.getElementById('requestForm').style.display = 'block';
-      window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    document.getElementById('requestForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const service = document.getElementById('selectedService').value;
-      const details = document.getElementById('details').value;
-      alert(`Thank you, ${name}! We'll contact you at ${email} to discuss your ${service} request.`);
-    });
-  </script>
 </body>
 </html>
